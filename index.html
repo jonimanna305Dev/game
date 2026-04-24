@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#4f46e5">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=2.0, minimum-scale=0.5">
+  <title>XO Battle · 3D Neon Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+<div class="particles" id="particlesContainer"></div>
+
+<div class="main-container glass-panel">
+  <!-- MENU SCREEN -->
+  <div id="menuScreen" class="menu-screen">
+    <h1>XO BATTLE</h1>
+    <div class="subtitle">2 PLAYER MODE</div>
+    <div class="mode-buttons">
+      <div class="neon-btn" id="playerVsPlayerBtn">
+        <span>👥</span> PLAYER vs PLAYER
+      </div>
+      <div class="neon-btn" id="playerVsAiBtn">
+        <span>🤖</span> PLAYER vs COMPUTER
+        <div class="difficulty-selector" id="difficultyGroup">
+          <span class="diff-btn active" data-diff="easy">EASY</span>
+          <span class="diff-btn" data-diff="medium">MEDIUM</span>
+          <span class="diff-btn" data-diff="hard">HARD</span>
+        </div>
+      </div>
+    </div>
+    <div style="color:#8ab3ff; margin-top:1rem;">✨ neon cyber grid ✨</div>
+  </div>
+
+  <!-- GAME SCREEN -->
+  <div id="gameScreen" class="game-screen hidden">
+    <div class="game-hud">
+      <div class="scoreboard">
+        <span class="score-x">❌ <span id="scoreX">0</span></span>
+        <span class="score-o">⭕ <span id="scoreO">0</span></span>
+      </div>
+      <div class="turn-indicator" id="turnDisplay">X TURN</div>
+      <button class="restart-btn" id="restartButton">↺ RESTART</button>
+    </div>
+
+    <div class="board-3d">
+      <div class="grid-container" id="gridContainer"></div>
+    </div>
+    <button class="restart-btn" id="backToMenuBtn" style="margin-top:0.8rem; border-color:#0af;">◀ MENU</button>
+  </div>
+</div>
+
+<script src="main.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./service-worker.js")
+    .then((reg) => {
+      console.log("SW registered:", reg.scope);
+    })
+    .catch((err) => console.log("SW failed:", err));
+}
+</script>
+</body>
+</html>
