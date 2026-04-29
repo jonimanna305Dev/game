@@ -1,13 +1,14 @@
 {
-  "name": "XO Battle",
-  "short_name": "XO",
+  "name": "NovaCore App",
+  "short_name": "NovaCoreApp",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#000000",
+  "background_color": "#ffffff",
   "theme_color": "#4f46e5",
+  "orientation": "portrait",
   "icons": [
     {
-      "src": "icon.png",
+      "src": "icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
@@ -18,3 +19,4 @@
     }
   ]
 }
+
